@@ -78,20 +78,6 @@ WSGI_APPLICATION = "BasicMachineLearning.wsgi.application"
 
 
 # Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-'''
-DATABASES = {
-    "default": {
-        'ENGINE': env('DATABASE_ENGINE', default='django.db.backends.sqlite3'),
-        'NAME': env('DATABASE_NAME', default=os.path.join(BASE_DIR, 'db.sqlite3')),
-        'USER': env('DATABASE_USER', default=''),
-        'PASSWORD': env('DATABASE_PASSWORD', default=''),
-        'HOST': env('DATABASE_HOST', default=''),
-        'PORT': env('DATABASE_PORT', default=''),
-    }
-}
-'''
-
 # Render PostgreSQL Database
 import dj_database_url
 
