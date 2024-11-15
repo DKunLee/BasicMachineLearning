@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env(
     DEBUG=(bool, False)
 )
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+environ.Env.read_env()
 
 # SECURITY
 SECRET_KEY = env('SECRET_KEY', default='unsafe-secret-key')
@@ -79,7 +79,7 @@ WSGI_APPLICATION = "BasicMachineLearning.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
+'''
 DATABASES = {
     "default": {
         'ENGINE': env('DATABASE_ENGINE', default='django.db.backends.sqlite3'),
@@ -89,6 +89,14 @@ DATABASES = {
         'HOST': env('DATABASE_HOST', default=''),
         'PORT': env('DATABASE_PORT', default=''),
     }
+}
+'''
+
+# Render PostgreSQL Database
+import dj_database_url
+
+DATABASES = {
+    "default": dj_database_url.parse(env('DATABASE_URL'))
 }
 
 # Password validation

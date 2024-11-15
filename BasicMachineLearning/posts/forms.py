@@ -1,22 +1,18 @@
 from django import forms
 from .models import Post
-from . import models
 from django_ckeditor_5.widgets import CKEditor5Widget
-
-
-
-category_list =[]
-category_object = models.Category.objects.all()
-for category in category_object:
-    category_list.append(
-        (f'{category.name}')
-    )
-
+from .models import Category
 
 class NewPostForm(forms.ModelForm):
+    thumbnail = forms.ImageField(required=True)
+
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(NewPostForm, self).__init__(*args, **kwargs)
         self.fields['content'].required = True
+        self.fields['category'].queryset = Category.objects.all()
+        self.fields['category'].widget.attrs.update({
+            'class': 'form-control',
+        })
 
     class Meta:
         model = Post
@@ -40,19 +36,19 @@ class NewPostForm(forms.ModelForm):
                 },
                 config_name='extends',
             ),
-            'category': forms.Select(
-                choices=category_list,
-                attrs={
-                    'class':'form-control'
-                },
-            ),
         }
-    thumbnail = forms.ImageField(required=True)
+    
 
 class EditPostForm(forms.ModelForm):
+    thumbnail = forms.ImageField(required=True)
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['content'].required = True
+        self.fields['category'].queryset = Category.objects.all()
+        self.fields['category'].widget.attrs.update({
+            'class': 'form-control',
+        })
 
     class Meta:
         model = Post
@@ -76,11 +72,4 @@ class EditPostForm(forms.ModelForm):
                 },
                 config_name='extends',
             ),
-            'category': forms.Select(
-                choices=category_list,
-                attrs={
-                    'class':'form-control'
-                },
-            ),
         }
-    thumbnail = forms.ImageField(required=True)
