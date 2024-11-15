@@ -28,7 +28,8 @@ environ.Env.read_env()
 # SECURITY
 SECRET_KEY = env('SECRET_KEY', default='unsafe-secret-key')
 DEBUG = env.bool('DEBUG', default=False)
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['basicmachinelearningwebpage.onrender.com'])
+
 
 # Application definition
 
