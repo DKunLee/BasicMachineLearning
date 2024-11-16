@@ -25,7 +25,7 @@ from core.views import index
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", index, name="welcome"),
-    path("core/", include('core.urls')),
+    path("", include('core.urls')),
     path("posts/", include('posts.urls')),
     path("ckeditor5/", include('django_ckeditor_5.urls'), name="ck_editor_5_upload_file"),
 ]
