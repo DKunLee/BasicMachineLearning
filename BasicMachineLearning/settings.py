@@ -125,8 +125,8 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
+MEDIA_ROOT = '/home/render/media'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/var/media/'
 
 if not DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
