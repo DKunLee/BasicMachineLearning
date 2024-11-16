@@ -78,6 +78,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "BasicMachineLearning.wsgi.application"
 
+MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Database
 # Render PostgreSQL Database
@@ -122,8 +124,9 @@ USE_TZ = True
 
 
 STATIC_URL = "/static/"
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 MEDIA_URL = '/media/'
+MEDIA_ROOT = '/var/media/'
 
 if not DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
