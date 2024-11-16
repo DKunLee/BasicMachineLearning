@@ -45,7 +45,7 @@
     <div class="post-grid">
         {% for post in posts %}
             <div class="post-item">
-                <a href="{% url 'posts:postdetail' post.id %}">z
+                <a href="{% url 'posts:postdetail' post.id %}">
                     <div class="thumbnail-frame">
                         <img src="{{ post.thumbnail.url }}" alt="{{ post.title }}">
                     </div>
