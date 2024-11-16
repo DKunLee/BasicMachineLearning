@@ -1,5 +1,6 @@
 asgiref==3.8.1
 bleach==6.2.0
+botocore==1.35.63
 Brotli==1.1.0
 build==1.2.2.post1
 CacheControl==0.14.1
@@ -24,6 +25,7 @@ h11==0.14.0
 idna==3.10
 installer==0.7.0
 jaraco.classes==3.4.0
+jmespath==1.0.1
 keyring==24.3.1
 more-itertools==10.5.0
 msgpack==1.1.0
@@ -38,11 +40,14 @@ psycopg2-binary==2.9.10
 ptyprocess==0.7.0
 pycparser==2.22
 pyproject_hooks==1.2.0
+python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
 RapidFuzz==3.10.1
 requests==2.32.3
 requests-toolbelt==1.0.0
+s3transfer==0.10.3
 shellingham==1.5.4
+six==1.16.0
 sqlparse==0.5.1
 tomlkit==0.13.2
 trove-classifiers==2024.10.21.16
