@@ -19,7 +19,7 @@ class Post(models.Model):
     description = models.TextField()
     content = CKEditor5Field('Text', config_name='extends')
     category = models.ForeignKey(Category, related_name='posts', on_delete=models.CASCADE)
-    thumbnail = models.ImageField(upload_to='post/')
+    thumbnail = models.ImageField(upload_to='/media/post')
     publish_date = models.DateTimeField(auto_now_add=True)
     
     class Meta:
